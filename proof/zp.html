@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykładowa Strona</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>    
+<body>
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="#">pieski</a>
+                <ul>
+                    <li><a href="#">Yorkshire Terrier</a></li>
+                    <li><a href="#">Doberman</a></li>
+                    <li><a href="#">Dalmatyńczyk</a></li>
+                </ul>
+            </li>
+            <li><a href="#">kotki</a></li>
+            <li><a href="#">króliczki</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="left-column">
+            <h1>Rosół</h1>
+            <p>Sporządzana z drobiu (najczęściej kury lub kurczaka), ewentualnie z wołowiny. W pierwszej książce kucharskiej wydanej w 1682 roku w Polsce, Compendium ferculorum, czyli zebranie potraw, znalazł się przepis na rosół polski.</p>
+            <img src="https://media.istockphoto.com/id/896045460/pl/zdj%C4%99cie/czysty-bulion-z-kurczaka-w-garnku.jpg?s=612x612&w=0&k=20&c=6Dt2cYSNZgjSVs_Wvc5vYjYTTC6qMogxBFqMZtGxd7A=" alt="Przykładowy obrazek">
+            <h2>Pomidorowa</h2>
+            <p>Można zrobić korzystając z rosołu, dolewając przecier pomidorowy i inne pomidorowe składniki.</p>
+            <h2>Ogórkowa</h2>
+            <p>Raczej nie robi się na rosole.</p>
+            <h3>Schabowy</h3>
+            <p>Kotlet panierowany ze schabu (z kością lub bez) przypominający sznycel wiedeński.</p>
+        </div>
+        <div class="right-column">
+            <div class="form-container">
+                <div class="input-group">
+                    <label for="nazwa">Nazwa:</label>
+                    <input type="text" id="nazwa" name="nazwa">
+                </div>
+                <div class="input-group">
+                    <label for="opis">Opis:</label>
+                    <input type="text" id="opis" name="opis">
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="input-group">
+                    <label for="lista">Lista rozwijana:</label>
+                    <select id="lista" name="lista">
+                        <option value="Montana">Montana</option>
+                        <option value="Teksas">Teksas</option>
+                        <option value="Nebraska">Nebraska</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Pole wyboru wariantów:</label><br>
+                    <input type="radio" id="wariant1" name="wariant" value="Taco Bell">
+                    <label for="wariant1">Taco Bell</label><br>
+                    <input type="radio" id="wariant2" name="wariant" value="Wendy's">
+                    <label for="wariant2">Wendy's</label><br>
+                    <input type="radio" id="wariant3" name="wariant" value="Panda Express">
+                    <label for="wariant3">Panda Express</label><br>
+                </div>
+            </div>
+            <div class="form-container">
+                <button type="submit">Wyślij</button>
+            </div>
+        <table>
+            <tr>
+                <th>Kolumna 1</th>
+                <th>Kolumna 2</th>
+                <th>Kolumna 3</th>
+            </tr>
+            <tr>
+                <td>fiat</td>
+                <td>500</td>
+                <td>samochód</td>
+            </tr>
+            <tr>
+                <td>kawasaki</td>
+                <td>400</td>
+                <td>motor</td>
+            </tr>
+            <tr>
+                <td>mercedes</td>
+                <td>trac800</td>
+                <td>traktor</td>
+            </tr>
+            <tr>
+                <td>ford</td>
+                <td>mustang</td>
+                <td>samochód</td>
+            </tr>
+        </table>
+    </div>
+        <br><br>
+    </main>
+        <footer>
+            <div class="footer-column">
+                ♥
+            </div>
+            <div class="footer-column">
+                &copy; 2024 Przykładowa Strona. Wszelkie prawa zastrzeżone.
+            </div>
+            <div class="footer-column">
+                ♥
+            </div>
+        </footer>
+</body>
+</html>
