@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:bio="http://purl.org/vocab/bio/0.1/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+<foaf:Person rdf:ID="natalialaczkowska">
+   <foaf:name>Natalia Łączkowska</foaf:name>
+   <foaf:gender>Female</foaf:gender>
+   <foaf:givenname>Natalia</foaf:givenname>
+   <foaf:family_name>Łączkowska</foaf:family_name>
+   
+   <bio:Education>
+      <foaf:Organization rdf:ID="school1">
+         <foaf:name>Szkoła Podstawowa nr23</foaf:name>
+         <dc:date>2012-06-30</dc:date>
+      </foaf:Organization>
+   </bio:Education>
+   
+   <bio:Education>
+      <foaf:Organization rdf:ID="school2">
+         <foaf:name>Gimnazjum nr 11</foaf:name>
+         <dc:date>2016-06-30</dc:date>
+      </foaf:Organization>
+   </bio:Education>
+   
+   <bio:Education>
+      <foaf:Organization rdf:ID="school3">
+         <foaf:name>Liceum Ogólnokształcące im. Józefa Piłsudskiego</foaf:name>
+         <dc:date>2020-04-30</dc:date>
+      </foaf:Organization>
+   </bio:Education>
+</foaf:Person>
+
+</rdf:RDF>

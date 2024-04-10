@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:bio="http://purl.org/vocab/bio/0.1/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <foaf:Person rdf:ID="natalialaczkowska">
+        <foaf:name>Natalia Łączkowska</foaf:name>
+        <foaf:gender>Female</foaf:gender>
+        <foaf:givenname>Natalia</foaf:givenname>
+        <foaf:family_name>Łączkowska</foaf:family_name>
+        
+        <bio:Education>
+            <foaf:Organization rdf:ID="school1">
+                <foaf:name>Szkoła Podstawowa nr23</foaf:name>
+                <foaf:startDate>2012-06-30</foaf:startDate>
+            </foaf:Organization>
+        </bio:Education>
+        
+        <bio:Education>
+            <foaf:Organization rdf:ID="school2">
+                <foaf:name>Gimnazjum nr 11</foaf:name>
+                <foaf:startDate>2016-06-30</foaf:startDate>
+            </foaf:Organization>
+        </bio:Education>
+        
+        <bio:Education>
+            <foaf:Organization rdf:ID="school3">
+                <foaf:name>Liceum Ogólnokształcące im. Józefa Piłsudskiego</foaf:name>
+                <foaf:startDate>2020-04-30</foaf:startDate>
+            </foaf:Organization>
+        </bio:Education>
+    </foaf:Person>
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Natalia Łączkowska",
+            "givenName": "Natalia",
+            "familyName": "Łączkowska",
+            "memberOf": [
+                {
+                    "@type": "Organization",
+                    "name": "Szkoła Podstawowa nr23"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Gimnazjum nr 11"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Liceum Ogólnokształcące im. Józefa Piłsudskiego"
+                }
+            ]
+        }
+    </script>
+</rdf:RDF>

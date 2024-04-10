@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Natalia Łączkowska - Profil</title>
+  <style>
+    .school {
+      margin-bottom: 20px;
+    }
+    .school h3 span {
+      text-decoration: none;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <div itemscope itemtype="http://schema.org/Person">
+    <h1>Profil użytkownika</h1>
+    <p><strong>Imię:</strong> <span itemprop="name">Natalia</span></p>
+    <p><strong>Nazwisko:</strong> <span itemprop="familyName">Łączkowska</span></p>
+    <p><strong>Płeć:</strong> <span itemprop="gender">Female</span></p>
+
+    <h2>Uczęszczane szkoły:</h2>
+    <div class="school" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+      <h3><span>Nazwa szkoły:</span> <span itemprop="name">Szkoła Podstawowa nr23</span></h3>
+      <p><span>Link do strony:</span> <a href="http://sp23gdynia.pl/" itemprop="url">kod linku</a></p>
+    </div>
+
+    <div class="school" itemprop="alumniOf">
+        <h3><span>Nazwa szkoły:</span> <span itemprop="name">Gimnazjum nr11</span></h3>
+      <p><span>Link do strony:</span> Brak strony internetowej</p>
+    </div>
+
+    <div class="school" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+      <h3><span>Nazwa szkoły:</span> <span itemprop="name">Liceum Ogólnokształcące im. Józefa Piłsudskiego</span></h3>
+      <p><span>Link do strony:</span> <a href="https://lo9.gdynia.pl/" itemprop="url">kod linku</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Zadanie 1
+
+Z wykorzystaniem HTML zbuduj stronę www podobną do tej na zrzucie ekranu.
+Obrazki i treść mogą być dowolne. Istotne elementy to:
+- nagłówki i paragrafy z treścią
+- lista nawigacyjna wraz z zagnieżdżoną "pod-listą"
+- obrazek, tabelka
+- formularz: pola tekstowe, lista rozwijana, pole wyboru opcji
