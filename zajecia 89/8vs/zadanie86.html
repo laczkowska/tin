@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choinka Nocą</title>
+    <style>
+        .white-star {
+            color: white;
+        }
+    </style>
+    <script>
+  function choinka(wysokosc) {
+    let choinkaStr = '';
+
+    let gwiazdkiNaGorze = 2 * wysokosc;
+
+    let rządCzarnychGwiazdekNaGórze = '*'.repeat(gwiazdkiNaGorze) + '<br>';
+    choinkaStr += rządCzarnychGwiazdekNaGórze;
+
+    for (let i = 0; i < wysokosc; i++) {
+        let gwiazdkiCzarne = '*'.repeat(wysokosc - i);
+        let gwiazdkiBiale = '<span class="white-star">*</span>'.repeat(i * 2);
+        choinkaStr += gwiazdkiCzarne + gwiazdkiBiale + gwiazdkiCzarne + '<br>';
+    }
+
+    let więcejCzarnychNaDole = '*'.repeat(gwiazdkiNaGorze) + '<br>';
+    choinkaStr += więcejCzarnychNaDole;
+
+    return choinkaStr;
+}
+
+        function wyswietlChoinke() {
+            let rawWysokosc = document.getElementById('wysokosc').value;
+
+            if (rawWysokosc.includes(',') || rawWysokosc.includes('.') || rawWysokosc.includes('-')) {
+                alert("Podaj liczbę naturalną.");
+                return;
+            }
+
+            let wysokosc = parseInt(rawWysokosc.replace(/\D/g, ''));
+            if (isNaN(wysokosc) || wysokosc < 0) {
+                alert("Podaj poprawną liczbę całkowitą nieujemną.");
+                return;
+            }
+
+            const wynik = choinka(wysokosc);
+            document.getElementById('wyniki').innerHTML = wynik;
+        }
+    </script>
+</head>
+<body>
+    <h1>Choinka Nocą</h1>
+    <label for="wysokosc">Podaj wysokość choinki:</label>
+    <input type="text" id="wysokosc" pattern="[0-9]*" title="Podaj liczbę całkowitą większą od zera" ><br><br>
+    <button onclick="wyswietlChoinke()">Wyświetl</button><br><br>
+    <p>Choinka:</p>
+    <div id="wyniki"></div>
+</body>
+</html>

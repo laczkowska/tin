@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenzura</title>
+</head>
+<body>
+    <h1>Cenzura</h1>
+    <label for="niedozwoloneSlowa">Niedozwolone słowa (oddzielone przecinkami):</label>
+    <input type="text" id="niedozwoloneSlowa">
+    <br>
+    <label for="zdanie">Zdanie do ocenzurowania:</label>
+    <input type="text" id="zdanie">
+    <br>
+    <button onclick="cenzuruj()">Cenzuruj</button>
+    <div id="wynik"></div>
+
+    <script>
+        function cenzura(niedozwoloneSlowa, zdanie) {
+            niedozwoloneSlowa.forEach(slowo => {
+                const regex = new RegExp("\\b" + slowo + "\\b", "gi");
+                zdanie = zdanie.replace(regex, "*");
+            });
+
+            return zdanie;
+        }
+
+        function cenzuruj() {
+            const niedozwoloneSlowaInput = document.getElementById("niedozwoloneSlowa");
+            const zdanieInput = document.getElementById("zdanie");
+            const wynikDiv = document.getElementById("wynik");
+
+            const niedozwoloneSlowa = niedozwoloneSlowaInput.value.split(",").map(slowo => slowo.trim());
+            const zdanie = zdanieInput.value;
+
+            const ocenzurowaneZdanie = cenzura(niedozwoloneSlowa, zdanie);
+            wynikDiv.textContent = ocenzurowaneZdanie;
+        }
+    </script>
+</body>
+</html>

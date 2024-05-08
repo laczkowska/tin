@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole figur</title>
+    <script>
+        function pokazFormularz() {
+            let figura = document.getElementById("figura").value;
+            let formularze = document.getElementsByClassName("formularz");
+            
+            for (let i = 0; i < formularze.length; i++) {
+                formularze[i].style.display = "none";
+            }
+            
+            document.getElementById(figura + "-formularz").style.display = "block";
+        }
+
+        function poleProstokata(a, b) {
+            return a * b;
+        }
+
+        function poleTrapezu(a, b, h) {
+            return ((a + b) / 2) * h;
+        }
+
+        function poleRownolegloboku(a, h) {
+            return a * h;
+        }
+
+        function poleTrojkata(a, h) {
+            return (a * h) / 2;
+        }
+
+        function obliczPole() {
+            let figura = document.getElementById("figura").value;
+            let pole;
+
+            switch (figura) {
+                case "prostokat":
+                    let a = parseFloat(document.getElementById("a").value);
+                    let b = parseFloat(document.getElementById("b").value);
+                    pole = poleProstokata(a, b);
+                    break;
+                case "trapez":
+                    let a1 = parseFloat(document.getElementById("a1").value);
+                    let a2 = parseFloat(document.getElementById("a2").value);
+                    let hTrapezu = parseFloat(document.getElementById("hTrapezu").value);
+                    pole = poleTrapezu(a1, a2, hTrapezu);
+                    break;
+                case "rownoleglobok":
+                    let podstawa = parseFloat(document.getElementById("podstawa").value);
+                    let wysokosc = parseFloat(document.getElementById("wysokosc").value);
+                    pole = poleRownolegloboku(podstawa, wysokosc);
+                    break;
+                case "trojkat":
+                    let podstawaT = parseFloat(document.getElementById("podstawaT").value);
+                    let wysokoscT = parseFloat(document.getElementById("wysokoscT").value);
+                    pole = poleTrojkata(podstawaT, wysokoscT);
+                    break;
+                default:
+                    pole = "Nieznana figura";
+            }
+
+            document.getElementById("wynik").innerHTML = "Pole figury: " + pole;
+        }
+    </script>
+</head>
+<body>
+    <h1>Obliczanie pola figur</h1>
+    <label for="figura">Wybierz figurę:</label>
+    <select id="figura" onchange="pokazFormularz()">
+        <option value="prostokat">Prostokąt</option>
+        <option value="trapez">Trapez</option>
+        <option value="rownoleglobok">Równoległobok</option>
+        <option value="trojkat">Trójkąt</option>
+    </select>
+    <br><br>
+    <div id="prostokat-formularz" class="formularz" style="display: none;">
+        <label for="a">a:</label>
+        <input type="number" id="a">
+        <br><br>
+        <label for="b">b:</label>
+        <input type="number" id="b">
+    </div>
+    <div id="trapez-formularz" class="formularz" style="display: none;">
+        <label for="a1">a1:</label>
+        <input type="number" id="a1">
+        <br><br>
+        <label for="a2">a2:</label>
+        <input type="number" id="a2">
+        <br><br>
+        <label for="hTrapezu">h:</label>
+        <input type="number" id="hTrapezu">
+    </div>
+    <div id="rownoleglobok-formularz" class="formularz" style="display: none;">
+        <label for="podstawa">Podstawa:</label>
+        <input type="number" id="podstawa">
+        <br><br>
+        <label for="wysokosc">Wysokość:</label>
+        <input type="number" id="wysokosc">
+    </div>
+    <div id="trojkat-formularz" class="formularz" style="display: none;">
+        <label for="podstawaT">Podstawa:</label>
+        <input type="number" id="podstawaT">
+        <br><br>
+        <label for="wysokoscT">Wysokość:</label>
+        <input type="number" id="wysokoscT">
+    </div>
+    <br><br>
+    <button onclick="obliczPole()">Oblicz pole</button>
+    <br><br>
+    <div id="wynik"></div>
+</body>
+</html>

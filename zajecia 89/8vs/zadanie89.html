@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pascal Triangle</title>
+</head>
+<body>
+    <h1>Trójkąt Pascala</h1>
+    <label for="height">Wysokość trójkąta:</label>
+    <input type="number" id="height" min="1">
+    <button onclick="generatePascalTriangle()">Generuj</button>
+    <div id="pascalTriangle"></div>
+
+    <script>
+        function generatePascalTriangle() {
+            const heightInput = document.getElementById("height");
+            const height = parseInt(heightInput.value);
+
+            if (isNaN(height) || height < 1) {
+                alert("Proszę podać poprawną wysokość trójkąta.");
+                return;
+            }
+
+            function binomialCoefficient(n, k) {
+                if (k === 0 || k === n) return 1;
+                return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+            }
+
+            let triangleHTML = "";
+            for (let i = 0; i < height; i++) {
+                let row = "";
+                for (let j = 0; j <= i; j++) {
+                    let coefficient = binomialCoefficient(i, j);
+                    row += coefficient + " ";
+                }
+                triangleHTML += "<p>" + row + "</p>";
+            }
+
+            const pascalTriangleDiv = document.getElementById("pascalTriangle");
+            pascalTriangleDiv.innerHTML = triangleHTML;
+        }
+    </script>
+</body>
+</html>

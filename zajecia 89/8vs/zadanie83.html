@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabliczka mnożenia</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function tabliczka(bok) {
+            let tabela = '<table>';
+            for (let i = 1; i <= bok; i++) {
+                tabela += '<tr>';
+                for (let j = 1; j <= bok; j++) {
+                    tabela += '<td>' + (i * j) + '</td>';
+                }
+                tabela += '</tr>';
+            }
+            tabela += '</table>';
+            return tabela;
+        }
+
+        function wyswietlTabliczke() {
+            const bok = parseInt(document.getElementById('bok').value);
+            const wynik = tabliczka(bok);
+            document.getElementById('wyniki').innerHTML = wynik;
+        }
+    </script>
+</head>
+<body>
+    <h1>Tabliczka mnożenia</h1>
+    <label for="bok">Podaj bok tabliczki:</label>
+    <input type="number" id="bok" min="1"><br><br>
+    <button onclick="wyswietlTabliczke()">Wyświetl</button><br><br>
+    <p>Tabliczka mnożenia:</p>
+    <div id="wyniki"></div>
+</body>
+</html>

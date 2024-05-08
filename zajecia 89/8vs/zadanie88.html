@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole figur</title>
+    <script>
+        const funkcjePola = {
+            "prostokat": (a, b) => a * b,
+            "trapez": (a, b, h) => ((a + b) / 2) * h,
+            "rownoleglobok": (a, h) => a * h,
+            "trojkat": (a, h) => (a * h) / 2
+        };
+
+        function obliczPole() {
+            let figura = document.getElementById("figura").value;
+            let funkcjaPola = funkcjePola[figura];
+            let parametry = [...document.querySelectorAll("." + figura)].map(input => parseFloat(input.value));
+            let pole = funkcjaPola(...parametry);
+            document.getElementById("wynik").innerHTML = "Pole figury: " + pole;
+        }
+    </script>
+</head>
+<body>
+    <h1>Obliczanie pola figur</h1>
+    <label for="figura">Wybierz figurę:</label>
+    <select id="figura" onchange="pokazFormularz()">
+        <option value="prostokat">Prostokąt</option>
+        <option value="trapez">Trapez</option>
+        <option value="rownoleglobok">Równoległobok</option>
+        <option value="trojkat">Trójkąt</option>
+    </select>
+    <br><br>
+    <div id="formularz">
+    </div>
+    <br><br>
+    <button onclick="obliczPole()">Oblicz pole</button>
+    <br><br>
+    <div id="wynik"></div>
+    <script>
+        function pokazFormularz() {
+            let figura = document.getElementById("figura").value;
+            let formularz = "";
+            const parametry = {
+                "prostokat": ["a", "b"],
+                "trapez": ["a1", "a2", "hTrapezu"],
+                "rownoleglobok": ["podstawa", "wysokosc"],
+                "trojkat": ["podstawaT", "wysokoscT"]
+            };
+            formularz = parametry[figura].map(parametr => `
+                <label for="${parametr}">${parametr.charAt(0).toUpperCase() + parametr.slice(1)}:</label>
+                <input type="number" class="${figura}" id="${parametr}">
+                <br><br>
+            `).join("");
+            document.getElementById("formularz").innerHTML = formularz;
+        }
+    </script>
+</body>
+</html>

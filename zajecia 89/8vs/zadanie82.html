@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liczby Podzielne</title>
+    <script>
+        function wypiszPodzielne(a, b, c) {
+            let wyniki = '';
+            for (let i = a; i <= b; i++) {
+                if (i % c === 0) {
+                    wyniki += i + ', ';
+                }
+            }
+            return wyniki.slice(0, -2); 
+        }
+
+        function wyswietlWyniki() {
+            const a = parseInt(document.getElementById('liczbaA').value);
+            const b = parseInt(document.getElementById('liczbaB').value);
+            const c = parseInt(document.getElementById('liczbaC').value);
+
+            const wyniki = wypiszPodzielne(a, b, c);
+            document.getElementById('wyniki').innerText = wyniki;
+        }
+    </script>
+</head>
+<body>
+    <h1>Liczby Podzielne</h1>
+    <label for="liczbaA">Początek przedziału:</label>
+    <input type="number" id="liczbaA"><br><br>
+    <label for="liczbaB">Koniec przedziału:</label>
+    <input type="number" id="liczbaB"><br><br>
+    <label for="liczbaC">Liczba przez którą mają być podzielne:</label>
+    <input type="number" id="liczbaC"><br><br>
+    <button onclick="wyswietlWyniki()">Wyświetl</button><br><br>
+    <p>Wyniki:</p>
+    <p id="wyniki"></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trójka Pitagorejska</title>
+    <script>
+        function czyTrojkaPitagorejska(a, b, c) {
+            let najwieksza = Math.max(a, b, c);
+            let sumaKwadratowPozostalych = 0;
+
+            if (najwieksza === a) {
+                sumaKwadratowPozostalych = b * b + c * c;
+            } else if (najwieksza === b) {
+                sumaKwadratowPozostalych = a * a + c * c;
+            } else {
+                sumaKwadratowPozostalych = a * a + b * b;
+            }
+
+            if (najwieksza * najwieksza === sumaKwadratowPozostalych) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function sprawdzTrojke() {
+            const a = parseInt(document.getElementById('liczbaA').value);
+            const b = parseInt(document.getElementById('liczbaB').value);
+            const c = parseInt(document.getElementById('liczbaC').value);
+
+            const wynik = czyTrojkaPitagorejska(a, b, c);
+
+            if (wynik) {
+                document.getElementById('wynik').innerText = 'Podane liczby tworzą trójkę pitagorejską.';
+            } else {
+                document.getElementById('wynik').innerText = 'Podane liczby nie tworzą trójkąta pitagorejskiego.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sprawdź trójkę pitagorejską</h1>
+    <label for="liczbaA">Liczba A:</label>
+    <input type="number" id="liczbaA"><br><br>
+    <label for="liczbaB">Liczba B:</label>
+    <input type="number" id="liczbaB"><br><br>
+    <label for="liczbaC">Liczba C:</label>
+    <input type="number" id="liczbaC"><br><br>
+    <button onclick="sprawdzTrojke()">Sprawdź</button><br><br>
+    <p id="wynik"></p>
+</body>
+</html>
