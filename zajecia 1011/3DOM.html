@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Samochodów</title>
+    <style>
+        body {
+            background-color: #ffcc80; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #bf360c; }
+
+        th, td {
+            border: 1px solid #ff6f00; 
+            padding: 10px;
+            text-align: left;
+            color: #000000; }
+
+        th {
+            background-color: #ff9100;}
+
+        tr:nth-child(even) {
+            background-color: #ffd79a; }
+
+        tr:nth-child(odd) {
+            background-color: #ffc978; }
+    </style>
+</head>
+<body>
+    <div id="table-container"></div>
+
+    <script>
+        const auta = [
+            { rok: 2010, przebieg: 120000, cena_wyjsciowa: 30000, cena_koncowa: 25000 },
+            { rok: 2015, przebieg: 80000, cena_wyjsciowa: 40000, cena_koncowa: 35000 },
+            { rok: 2018, przebieg: 50000, cena_wyjsciowa: 50000, cena_koncowa: 47000 },
+            { rok: 2020, przebieg: 20000, cena_wyjsciowa: 60000, cena_koncowa: 58000 }
+        ];
+
+        function createTable(data) {
+            const table = document.createElement('table');
+
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+            const headers = ['Rok', 'Przebieg', 'Cena Wyjściowa', 'Cena Końcowa'];
+            headers.forEach(headerText => {
+                const th = document.createElement('th');
+                th.textContent = headerText;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+            data.forEach(auto => {
+                const row = document.createElement('tr');
+                Object.values(auto).forEach(value => {
+                    const td = document.createElement('td');
+                    td.textContent = value;
+                    row.appendChild(td);
+                });
+                tbody.appendChild(row);
+            });
+            table.appendChild(tbody);
+
+            return table;
+        }
+
+        const tableContainer = document.getElementById('table-container');
+        const table = createTable(auta);
+        tableContainer.appendChild(table);
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f3e5f5;
+    }
+
+    .calculator {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input, select, button {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input, select {
+      border: 1px solid #ab47bc; 
+    }
+
+    button {
+      background-color: #ab47bc; 
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #9c27b0; 
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #6a1b9a; 
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="number" id="num1" placeholder="Liczba 1">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="Liczba 2">
+    <button onclick="calculate()">Oblicz</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const operator = document.getElementById('operator').value;
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(num1) || isNaN(num2)) {
+        resultDiv.textContent = "Wprowadź poprawne liczby";
+        return;
+      }
+
+      let result;
+      switch (operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          if (num2 === 0) {
+            resultDiv.textContent = "Nie można dzielić przez zero";
+            return;
+          }
+          result = num1 / num2;
+          break;
+      }
+
+      resultDiv.textContent = `Wynik: ${result}`;
+    }
+  </script>
+</body>
+</html>

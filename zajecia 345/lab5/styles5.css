@@ -39,6 +39,7 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    font-size: 24px;
 }
 
 nav ul li {
@@ -65,6 +66,7 @@ nav ul li a::after {
     padding: 20px;
     position: relative;
     flex-grow: 1;
+    font-size: 20px;
 }
 
 .column {

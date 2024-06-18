@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsywne Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c4ff88; 
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #8fffa0; 
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav ul li {
+      margin: 0 10px;
+    }
+
+    .nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #3cb371;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    .nav ul li a:hover {
+      background-color: #2e8b57;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8fffa0; 
+        border-radius: 5px;
+      }
+      
+      .nav ul.active {
+        display: flex;
+      }
+      
+      .nav ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul id="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

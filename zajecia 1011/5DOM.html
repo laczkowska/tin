@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akordeon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFF99; /* Jasnożółte tło */
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #FFA500; 
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none; 
+    }
+
+    .accordion-header {
+      background-color: #ffe435; 
+      color: rgb(89, 77, 35);
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    .accordion-content {
+      display: none; 
+      padding: 15px;
+      background-color: #f2ff00; 
+    }
+
+    .accordion-item.active .accordion-header {
+      background-color: #ffbf00; 
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">Jak rozpoznać polską wódkę?</div>
+    <div class="accordion-content">
+      <p>Polską wódką nazywamy trunek, który stosuje chronione oznaczenia geograficzne i spełnia określone kryteria, czyli jest wyprodukowany na terenie RP, przy użyciu polskich zbóż: pszenicy, owsa, żyta, pszenżyta, jęczmienia lub ziemniaków. Stowarzyszenie Polska Wódka stworzyło także dobrowolny program ,,Polska Wódka”, który obejmuje przyznawanie oznaczeń słowno – graficznych produktom, które spełniają kryteria. Celem inicjatywy jest budowanie świadomości i wagi oznaczenia geograficznego polskiego trunku.</p>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">Gdzie jest wytwarzana polska wódka?</div>
+    <div class="accordion-content">
+      <p>Na sukces polskiej wódki pracuje obecnie 50 gorzelni, które zajmują się wytwarzaniem destylatu rolniczego. Cały proces jej produkcji odbywa się w dwóch etapach. Pierwszy ma miejsce w małych, rolniczych gorzelniach, które wytwarzają destylat rolniczy. Następnie powstały spirytus trafia do zakładu rekrtyfikacji, gdzie odbywa się dalszy proces jego oczyszczania. Ostatnim miejscem, do którego trafia jest zakład produkcji wódki, w którym łączy się alkohol etylowy pochodzenia rolniczego z wodą, a powstały trunek filtruje się i rozlewa do butelek. Jeśli każdy z pięciu etapów produkcji odbędzie się w Polsce, a trunek jest wyprodukowany z polskich zbóż, możemy nazwać go Polską Wódką.</p>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">Jak serwować polską wódkę?</div>
+    <div class="accordion-content">
+      <p>Dla polskiej wódki najbardziej korzystną temperaturą jest 6°C do 8°C. Właśnie w takich warunkach można najdokładniej poczuć smak i zapach trunku. Ważne, aby zanadto nie zmrozić wódki, bo w zbyt niskiej temperaturze traci ona swoje charakterystyczne właściwości. Jako ciekawostkę można wspomnieć fakt, że przed wojną polską wódkę serwowano w mikadce, czyli małej szklance o pojemności 50 ml, a wypitą zagryzano śledziem.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+
+    header.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>
